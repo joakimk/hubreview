@@ -14,6 +14,10 @@ Wip experimental commit-by-commit codereview app.
 
 Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth_key=your-key, commit to the repo and look at https://your-app.herokuapp.com?auth_key=your-key.
 
+## Running tests
+
+    rake
+
 ## Getting production data locally
 
     heroku addons:add pgbackups
