@@ -1,4 +1,4 @@
-class RevisionsController < ActionController::Base
+class RevisionsController < ApplicationController
   def index
   end
 end
