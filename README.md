@@ -4,6 +4,10 @@ Wip experimental commit-by-commit codereview app.
 
 **This is a prototype**, the code will be bad. Just doing the fastest possible thing.
 
+## How it looks
+
+![how it looks](http://cl.ly/image/400E1W3B1W3y/Screen%20Shot%202014-02-28%20at%2010.46.12%20PM.png)
+
 ## Heroku
 
     git remote add heroku git@heroku.com:APP_NAME.git
