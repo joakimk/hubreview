@@ -1,0 +1,92 @@
+{
+  "ref": "refs/heads/master",
+  "after": "232e29976db07bc05124007ff11165b10c0ee65f",
+  "before": "9330f03c8a5be5cf8372fa1d63e164b7eded79f1",
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "compare": "https://github.com/joakimk/minimapper/compare/9330f03c8a5b...232e29976db0",
+  "commits": [
+    {
+      "id": "232e29976db07bc05124007ff11165b10c0ee65f",
+      "distinct": true,
+      "message": "Update README.md",
+      "timestamp": "2014-02-18T04:34:32-08:00",
+      "url": "https://github.com/joakimk/minimapper/commit/232e29976db07bc05124007ff11165b10c0ee65f",
+      "author": {
+        "name": "Joakim Kolsjö",
+        "email": "foo@example.com",
+        "username": "joakimk"
+      },
+      "committer": {
+        "name": "Joakim Kolsjö",
+        "email": "foo@example.com",
+        "username": "joakimk"
+      },
+      "added": [
+
+      ],
+      "removed": [
+
+      ],
+      "modified": [
+        "README.md"
+      ]
+    }
+  ],
+  "head_commit": {
+    "id": "232e29976db07bc05124007ff11165b10c0ee65f",
+    "distinct": true,
+    "message": "Update README.md",
+    "timestamp": "2014-02-18T04:34:32-08:00",
+    "url": "https://github.com/joakimk/minimapper/commit/232e29976db07bc05124007ff11165b10c0ee65f",
+    "author": {
+      "name": "Joakim Kolsjö",
+      "email": "foo@example.com",
+      "username": "joakimk"
+    },
+    "committer": {
+      "name": "Joakim Kolsjö",
+      "email": "foo@example.com",
+      "username": "joakimk"
+    },
+    "added": [
+
+    ],
+    "removed": [
+
+    ],
+    "modified": [
+      "README.md"
+    ]
+  },
+  "repository": {
+    "id": 6181097,
+    "name": "minimapper",
+    "url": "https://github.com/joakimk/minimapper",
+    "description": "A minimalistic way of separating your models from ActiveRecord",
+    "homepage": "http://documentup.com/joakimk/minimapper",
+    "watchers": 81,
+    "stargazers": 81,
+    "forks": 5,
+    "fork": false,
+    "size": 809,
+    "owner": {
+      "name": "joakimk",
+      "email": "foo@example.com"
+    },
+    "private": false,
+    "open_issues": 9,
+    "has_issues": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "language": "Ruby",
+    "created_at": 1349991167,
+    "pushed_at": 1392726872,
+    "master_branch": "master"
+  },
+  "pusher": {
+    "name": "joakimk",
+    "email": "foo@example.com"
+  }
+}
