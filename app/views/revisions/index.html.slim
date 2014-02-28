@@ -1,5 +1,10 @@
-h1 Index
-- Revision.order('id DESC').all.each do |revision|
-  p= link_to(revision.name, revision.url, target: "_blank")
-  p= revision.message
-  p= revision.author
+- Revision.limit(100).order('id DESC').all.each do |revision|
+  .revision{ style="#{revision.reviewed ? 'background-color: #AFA;' : ''}" }
+    .button
+      = form_for(revision) do |f|
+        = f.submit revision.reviewed ? "Not reviewed" : "Reviewed"
+    .rev
+      = link_to(revision.name, revision.url, target: "_blank")
+      .author= revision.author
+    .message= revision.message
+
