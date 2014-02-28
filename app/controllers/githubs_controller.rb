@@ -1,6 +1,9 @@
 class GithubsController < ApplicationController
   def create
-    Rails.logger.error params.inspect
+    params[:commits].each do |commit|
+      Revision.create! name: commit[:id], author: commit[:author][:name]
+    end
+
     render text: "success"
   end
 end
