@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228192733) do
+ActiveRecord::Schema.define(version: 20140228195439) do
 
   create_table "revisions", force: true do |t|
-    t.string   "name"
-    t.string   "author"
+    t.string   "name",                       null: false
+    t.string   "author",                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "payload",                    null: false
+    t.string   "url",                        null: false
+    t.string   "message",                    null: false
+    t.boolean  "reviewed",   default: false
   end
 
 end

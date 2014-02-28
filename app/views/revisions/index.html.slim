@@ -1,3 +1,5 @@
 h1 Index
-- Revision.all.each do |revision|
-  p= "#{revision.name} (#{revision.author})"
+- Revision.order('id DESC').all.each do |revision|
+  p= link_to(revision.name, revision.url, target: "_blank")
+  p= revision.message
+  p= revision.author
