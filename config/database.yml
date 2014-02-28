@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: hubreview_development
+  pool: 5
+  username: <%= ENV['USER'] %>
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: hubreview_test
+  pool: 5
+  username: <%= ENV['USER'] %>
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: hubreview_production
+  pool: 5
+  username: <%= ENV['USER'] %>
+  password:

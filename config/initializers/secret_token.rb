@@ -1,0 +1,1 @@
+Hubreview::Application.config.secret_key_base = ENV['SECRET_KEY_BASE'] || '77b8c48c1cca950d04c4aa886642016b05db4877489e8ca0dda837a95182a22fb9e9fa25f2d0180d68deb2bb401367b236d301cb0540e4ee1dfb22eb29f75325'
