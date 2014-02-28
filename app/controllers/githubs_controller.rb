@@ -1,6 +1,6 @@
 class GithubsController < ApplicationController
   def create
-    payload = params[:payload]
+    payload = HashWithIndifferentAccess.new(JSON.parse(params[:payload]))
     payload[:commits].each do |commit|
       Revision.create!(
         name: commit[:id],
