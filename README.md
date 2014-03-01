@@ -24,6 +24,8 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
 ## Running tests
 
+    rake db:migrate
+    rake db:schema:load
     rake
 
 ## Getting production data locally
