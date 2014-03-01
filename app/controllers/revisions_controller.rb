@@ -8,6 +8,6 @@ class RevisionsController < ApplicationController
     revision.save!
 
     PushRevisionChange.push(revision, self)
-    redirect_to action: :index
+    render text: "success"
   end
 end
