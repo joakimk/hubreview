@@ -11,9 +11,9 @@ ws.onmessage = function(message) {
     var data = JSON.parse(message.data);
     selector = $("#revision_" + data.revision_id);
 
-    // Add new revisions
+    // Add place for new revision
     if($(selector).length == 0) {
-      $(".revisions").prepend("<div id='revision_" + data.revision_id + ">" + data.html + "</div>");
+      $(".revisions").prepend('<div id="revision_' + data.revision_id + '">' + data.html + '</div>');
     }
     else {
       // Update old ones
