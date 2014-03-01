@@ -1,3 +1,4 @@
 - Revision.limit(100).order('id DESC').all.each do |revision|
-  div id="revision_#{revision.id}"
-    = render "revision", revision: revision
+  .revisions
+    div id="revision_#{revision.id}"
+      = render "revision", revision: revision

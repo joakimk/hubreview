@@ -13,7 +13,7 @@ ws.onmessage = function(message) {
 
     // Add new revisions
     if($(selector).length == 0) {
-      $("#revisions").prepend("<div id='revision_" + data.revision_id + ">" + data.html + "</div>");
+      $(".revisions").prepend("<div id='revision_" + data.revision_id + ">" + data.html + "</div>");
     }
     else {
       // Update old ones
