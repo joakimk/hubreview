@@ -2,7 +2,7 @@
   .revision{ style="#{revision.reviewed ? 'background-color: #AFA;' : ''}" }
     .button
       = form_for(revision) do |f|
-        = f.submit revision.reviewed ? "Not reviewed" : "Reviewed"
+        = f.submit revision.reviewed ? "Mark as new" : "Mark as reviewed"
     .rev
       = link_to(revision.name, revision.url, target: "_blank")
       .author= revision.author
