@@ -6,7 +6,7 @@ Wip experimental commit-by-commit codereview app.
 
 ## How it looks
 
-![how it looks](http://cl.ly/image/2C2j3a0v3Z45/Screen%20Shot%202014-03-01%20at%2011.17.03%20AM.png)
+![how it looks](http://cl.ly/image/1t2O0W0S1w0T/Screen%20Shot%202014-03-01%20at%2011.41.15%20AM.png)
 
 ## Heroku
 
