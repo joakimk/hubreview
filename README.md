@@ -2,7 +2,11 @@
 
 Wip experimental commit-by-commit codereview app.
 
-**This is a prototype**, the code will be bad. Just doing the fastest possible thing.
+To be able to do review on everything when you [integrate commit-by-commit instead of doing feature branches and pull requests](http://thepugautomatic.com/2014/02/code-review/).
+
+The idea is to use github for codereview and keep track of which commits has been reviewed in this app.
+
+**This is a prototype**, the code will be bad and tests missing. Just doing the fastest possible thing.
 
 ## How it looks
 
@@ -31,3 +35,4 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
 * Evaluate if this is a good idea and something to keep
   * In that case reimplement the prototyped parts and refactor
+* See if a userscript can be used to report reviewed commits.
