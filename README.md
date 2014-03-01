@@ -36,7 +36,7 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
 May error out on some loads due to web sockets.
 
-    PORT=3000 foreman run
+    PORT=3000 foreman start
     open http://localhost:3000
 
 ## Getting production data locally

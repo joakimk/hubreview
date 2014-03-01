@@ -12,11 +12,9 @@ class GithubsController < ApplicationController
         payload: payload,
       }
 
-      if revision.persisted?
-        PushRevisionChange.push(revision, self)
-      end
-
       revision.save!
+
+      PushRevisionChange.push(revision, self)
     end
 
     render text: "success"
