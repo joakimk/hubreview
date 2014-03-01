@@ -18,6 +18,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
+# Push support
+gem 'faye-websocket'
+gem 'redis'
+gem 'thin'
+
 group :development, :test do
   gem 'rspec-rails'
 end

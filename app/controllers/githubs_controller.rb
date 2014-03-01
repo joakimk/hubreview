@@ -11,6 +11,11 @@ class GithubsController < ApplicationController
         branch: payload["ref"].split("/").last,
         payload: payload,
       }
+
+      if revision.persisted?
+        PushRevisionChange.push(revision, self)
+      end
+
       revision.save!
     end
 

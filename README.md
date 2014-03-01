@@ -18,6 +18,10 @@ The idea is to use github for codereview and keep track of which commits has bee
     heroku config:set SECRET_KEY_BASE=$(rake secret) AUTH_KEY=$(pwgen -n 50 -1)
     heroku run rake db:migrate
 
+    # For websockets to update the view on changes to revisions or new revisions
+    heroku labs:enable websockets
+    heroku addons:add rediscloud:25
+
 ## Setup on github
 
 Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth_key=your-key, commit to the repo and look at https://your-app.herokuapp.com?auth_key=your-key.
@@ -27,6 +31,13 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
     rake db:migrate
     rake db:schema:load
     rake
+
+## Running locally
+
+May error out on some loads due to web sockets.
+
+    PORT=3000 foreman run
+    open http://localhost:3000
 
 ## Getting production data locally
 
