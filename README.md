@@ -26,3 +26,9 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
     heroku addons:add pgbackups
     rake app:reset
+
+## Todo
+
+* Evaluate if this is a good idea and something to keep
+  * In that case reimplement the prototyped parts and refactor
+* Handle branches somehow, atleast show which branch it is
