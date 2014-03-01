@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228195439) do
+ActiveRecord::Schema.define(version: 20140301102349) do
 
   create_table "revisions", force: true do |t|
     t.string   "name",                       null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140228195439) do
     t.string   "url",                        null: false
     t.string   "message",                    null: false
     t.boolean  "reviewed",   default: false
+    t.string   "branch"
   end
 
 end

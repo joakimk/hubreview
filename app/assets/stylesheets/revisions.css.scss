@@ -6,8 +6,17 @@
     float: right;
   }
 
-  .author {
-    margin-left: 10px;
+  .tag {
+    margin-left: 5px;
     display: inline;
+
+    .name {
+      display: inline;
+      margin-right: 3px;
+    }
+
+    .value {
+      display: inline;
+    }
   }
 }
