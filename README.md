@@ -51,6 +51,7 @@ May error out on some loads due to web sockets.
 * See if a userscript can be used to report reviewed commits.
 * Fetch comment info somehow. Display which of your commits have comments. Be able to mark as read up to some time. 
   * Not needing to check email for review comments.
+* Evaluate "idea for hubreview: have the favicon change to show the number of unreviewed things"
 
 ## Credits and license
 
