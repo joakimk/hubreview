@@ -54,6 +54,9 @@ May error out on some loads due to web sockets.
 * Evaluate "idea for hubreview: have the favicon change to show the number of unreviewed things"
 * Github auth to see who is reviewing.
 * Gravatar images
+* Mark a commit as in review
+* Various filters or search
+* Showing CI status
 
 ## Credits and license
 
