@@ -28,9 +28,9 @@ ws.onmessage = function(message) {
       // Update old ones
       $("#revision_" + data.revision_id).html(data.html);
     }
-
-    setupLinkOpening();
   }
+
+  setupLinkOpening();
 };
 
 reloadWhenSocketConnectionIsLost = function() {
@@ -43,5 +43,3 @@ reloadWhenSocketConnectionIsLost = function() {
 }
 
 window.setInterval(reloadWhenSocketConnectionIsLost, 5000);
-
-setupLinkOpening();
