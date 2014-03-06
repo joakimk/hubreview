@@ -1,3 +1,5 @@
+lastPingTime = new Date()
+
 $ ->
   $(".revisions").on "click", ".rev a", ->
     $revision = $(this).parents(".revision-wrapper")
@@ -7,7 +9,6 @@ $ ->
   scheme   = $("body").data("push-scheme")
   uri      = scheme + window.document.location.host + "/"
   ws       = new WebSocket(uri)
-  lastPingTime = new Date()
 
   ws.onmessage = (message) ->
     if message.data == "ping"
