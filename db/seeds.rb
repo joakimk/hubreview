@@ -13,6 +13,16 @@ if Rails.env.development?
   )
 
   Revision.create!(
+    name: "xyzabcxyzabcxyc",
+    branch: "master",
+    author: "Kim Persson",
+    url: "http://example.com/foo",
+    message: "What!",
+    reviewed: true,
+    payload: {},
+  )
+
+  Revision.create!(
     name: "123abc123abc123abc",
     branch: "master",
     author: "Joakim Kolsjö",
