@@ -1,5 +1,6 @@
 $white: #fff;
 $green: #dfd;
+$blue: #ddf;
 $light-gray: #888;
 $dark-gray: #444;
 
@@ -39,6 +40,10 @@ a {
   &.was-reviewed {
     background: $green;
     .button { background-color: $white; }
+  }
+
+  &.in-review {
+    background: $blue;
   }
 
   .button-wrapper {

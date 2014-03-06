@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301102349) do
+ActiveRecord::Schema.define(version: 20140306202259) do
 
   create_table "revisions", force: true do |t|
-    t.string   "name",                       null: false
-    t.string   "author",                     null: false
+    t.string   "name",                         null: false
+    t.string   "author",                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "payload",                    null: false
-    t.string   "url",                        null: false
-    t.string   "message",                    null: false
-    t.boolean  "reviewed",   default: false
+    t.text     "payload",                      null: false
+    t.string   "url",                          null: false
+    t.string   "message",                      null: false
+    t.boolean  "reviewed",     default: false
     t.string   "branch"
+    t.datetime "in_review_at"
   end
 
 end

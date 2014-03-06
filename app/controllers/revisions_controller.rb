@@ -4,7 +4,13 @@ class RevisionsController < ApplicationController
 
   def update
     revision = Revision.find(params[:id])
-    revision.reviewed = !revision.reviewed
+
+    if params[:in_review]
+      revision.in_review_at = Time.now
+    else
+      revision.reviewed = !revision.reviewed
+    end
+
     revision.save!
 
     PushRevisionChange.push(revision, self)

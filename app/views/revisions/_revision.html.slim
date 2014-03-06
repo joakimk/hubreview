@@ -1,4 +1,4 @@
-.revision class=(revision.reviewed? ? 'was-reviewed' : '')
+.revision class=(revision.reviewed? ? 'was-reviewed' : '') last_in_review=revision.in_review_at.to_i
   .button-wrapper
     = form_for(revision, remote: true) do |f|
       = f.submit (revision.reviewed ? "Mark as new" : "Mark as reviewed"), class: "button"

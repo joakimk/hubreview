@@ -1,6 +1,8 @@
 lastPingTime = new Date()
 
 setup = ->
+  updateInReview()
+
   scheme   = $("body").data("push-scheme")
   uri      = scheme + window.document.location.host + "/"
   ws       = new WebSocket(uri)
@@ -24,6 +26,7 @@ setup = ->
 
     setUpLinkOpening()
     filterByAuthor()
+    updateInReview()
 
 # Handle parameter-based modifications client side because we need to be able to push out
 # one version of new pages during github receive for everyone.
@@ -41,6 +44,17 @@ filterByAuthor = ->
     $revisions = $(".revision-author:contains("+authorName+")").parents(".revision-wrapper")
     $revisions.addClass("by-me")
 
+updateInReview = ->
+  for revision in $(".revision")
+    unix = Math.round(new Date() / 1000)
+    timeSinceLastReview = unix - $(revision).attr("last_in_review")
+    howLongToConsiderRevisionCurrentlyInReview = 60 # seconds
+
+    if timeSinceLastReview < howLongToConsiderRevisionCurrentlyInReview
+      $(revision).addClass("in-review")
+      setTimeout(updateInReview, howLongToConsiderRevisionCurrentlyInReview * 1000)
+    else
+      $(revision).removeClass("in-review")
 
 reloadWhenSocketConnectionIsLost = ->
   currentTime = new Date()
