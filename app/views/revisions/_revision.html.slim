@@ -3,7 +3,7 @@
     = form_for(revision, remote: true) do |f|
       = f.submit revision.reviewed ? "Mark as new" : "Mark as reviewed"
   .rev
-    = link_to(revision.name, revision.url, target: "_blank")
+    = link_to(revision.short_name, revision.url, target: "_blank")
     .tag
       .name in
       .value= revision.branch
