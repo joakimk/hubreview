@@ -1,3 +1,7 @@
+$green: #dfd;
+$light-gray: #888;
+$dark-gray: #444;
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@ body {
 }
 
 a {
-  color: #444;
+  color: $dark-gray;
 }
 
 .revision-wrapper {
@@ -25,7 +29,7 @@ a {
   margin-bottom: 1px;
 
   &.was-reviewed {
-    background: #dfd;
+    background: $green;
   }
 
   .button {
@@ -44,13 +48,13 @@ a {
     .name {
       display: inline;
       margin-right: 3px;
-      color: #888;
+      color: $light-gray;
     }
 
     .value {
       display: inline;
       font-weight: 600;
-      color: #444;
+      color: $dark-gray;
     }
   }
 }
