@@ -50,7 +50,7 @@ updateInReview = ->
     timeSinceLastReview = unix - $(revision).attr("last_in_review")
     howLongToConsiderRevisionCurrentlyInReview = 60 # seconds
 
-    if timeSinceLastReview < howLongToConsiderRevisionCurrentlyInReview
+    if !$(revision).hasClass("was-reviewed") && timeSinceLastReview < howLongToConsiderRevisionCurrentlyInReview
       $(revision).addClass("in-review")
       setTimeout(updateInReview, howLongToConsiderRevisionCurrentlyInReview * 1000)
     else

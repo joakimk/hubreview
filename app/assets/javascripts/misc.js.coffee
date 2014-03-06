@@ -11,5 +11,5 @@ markRevisionAsLastClicked = ->
   $revision.addClass("last-clicked")
 
   # Tell the server that it was clicked
-  id = $(".revision-wrapper").attr("id").split("_")[1]
+  id = $revision.attr("id").split("_")[1]
   $.ajax(type: "PUT", url: "/revisions/#{id}?in_review=true")
