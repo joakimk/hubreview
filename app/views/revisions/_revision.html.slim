@@ -2,6 +2,9 @@
   .button
     = form_for(revision, remote: true) do |f|
       = f.submit revision.reviewed ? "Mark as new" : "Mark as reviewed"
+  .message
+    = link_to(revision.url, target: "_blank") do
+      = revision.message
   .rev
     = link_to(revision.short_name, revision.url, target: "_blank")
     .tag
@@ -10,6 +13,3 @@
     .tag
       .name by
       .value.revision-author= revision.author
-  .message
-    = link_to(revision.url, target: "_blank") do
-      = revision.message
