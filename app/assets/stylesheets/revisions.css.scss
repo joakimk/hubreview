@@ -1,6 +1,7 @@
 $white: #fff;
 $green: #dfd;
 $blue: #ddf;
+$yellow: goldenrod;
 $light-gray: #888;
 $dark-gray: #444;
 
@@ -24,7 +25,7 @@ a {
   }
 
   &.last-clicked .revision {
-    border-left: 15px solid $blue;
+    border-left: 15px solid $yellow;
   }
 }
 
