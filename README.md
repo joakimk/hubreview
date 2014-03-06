@@ -36,6 +36,7 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
 May error out on some loads due to web sockets.
 
+    rake db:setup
     PORT=3000 foreman start
     open http://localhost:3000
 
