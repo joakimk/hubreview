@@ -8,10 +8,10 @@ class RevisionsController < ApplicationController
     if params[:in_review]
       revision.in_review_at = Time.now
     else
-      revision.reviewed = !revision.reviewed
+      revision.toggle_reviewed_state
 
       # Save how long it took to review a revision, just for fun
-      if revision.reviewed && revision.in_review_at && !revision.review_time
+      if revision.reviewed? && revision.in_review? && !revision.review_time
         revision.review_time = Time.now - revision.in_review_at
       end
     end
