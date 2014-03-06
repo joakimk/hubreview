@@ -1,11 +1,6 @@
 lastPingTime = new Date()
 
 setup = ->
-  $(".revisions").on "click", ".rev a", ->
-    $revision = $(this).parents(".revision-wrapper")
-    $(".revision-wrapper").removeClass("last-clicked")
-    $revision.addClass("last-clicked")
-
   scheme   = $("body").data("push-scheme")
   uri      = scheme + window.document.location.host + "/"
   ws       = new WebSocket(uri)
