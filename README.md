@@ -40,6 +40,10 @@ May error out on some loads due to web sockets.
     PORT=3000 foreman start
     open http://localhost:3000
 
+When you run `rake db:setup`, you get some example seed data.
+
+If that's not enough, you can download production data.
+
 ## Getting production data locally
 
     heroku addons:add pgbackups
@@ -50,7 +54,7 @@ May error out on some loads due to web sockets.
 * Evaluate if this is a good idea and something to keep
   * In that case reimplement the prototyped parts and refactor
 * See if a userscript can be used to report reviewed commits.
-* Fetch comment info somehow. Display which of your commits have comments. Be able to mark as read up to some time. 
+* Fetch comment info somehow. Display which of your commits have comments. Be able to mark as read up to some time.
   * Not needing to check email for review comments.
 * Evaluate "idea for hubreview: have the favicon change to show the number of unreviewed things"
 * Github auth to see who is reviewing.
