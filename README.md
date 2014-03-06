@@ -12,6 +12,10 @@ The idea is to use github for codereview and keep track of which commits has bee
 
 ![how it looks](http://cl.ly/image/1t2O0W0S1w0T/Screen%20Shot%202014-03-01%20at%2011.41.15%20AM.png)
 
+## Parameters
+
+`?open_in_same_page=true` removes the `target="_blank"` from links (useful e.g. if with panels in [Fluid.app](http://fluidapp.com/))
+
 ## Heroku
 
     git remote add heroku git@heroku.com:APP_NAME.git
