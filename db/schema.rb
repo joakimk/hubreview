@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306202259) do
+ActiveRecord::Schema.define(version: 20140306212738) do
 
   create_table "revisions", force: true do |t|
     t.string   "name",                         null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140306202259) do
     t.boolean  "reviewed",     default: false
     t.string   "branch"
     t.datetime "in_review_at"
+    t.integer  "review_time"
   end
 
 end

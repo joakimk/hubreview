@@ -7,10 +7,12 @@ describe "Reviewing revisons" do
 
     expect(page).not_to have_reviewed_revisions
 
+    click_link "abc123"
     click_button "Mark as reviewed"
 
     update_page
     expect(page).to have_reviewed_revisions
+    expect(revision.reload.review_time).not_to be_nil
   end
 
   it "can mark revisions as new", :js do
