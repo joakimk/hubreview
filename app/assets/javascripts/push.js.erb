@@ -3,14 +3,15 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 var lastPingTime = new Date();
 
-setupLinkOpening = function() {
+// Handle parameter-based modifications client side because we need to be able to push out
+// one version of new pages during github receive for everyone.
+
+var setUpLinkOpening = function() {
   // Unless ?open_in_same_page=true is set, default to opening in new page.
-  // Set client side because we need to be able to push out one version of
-  // new pages during github receive for everyone.
-  if (window.location.href.indexOf("open_in_same_page") == -1) {
-    $(".rev a").attr("target", "_blank")
+  if (location.search.indexOf("open_in_same_page") === -1) {
+    $(".rev a").attr("target", "_blank");
   }
-}
+};
 
 ws.onmessage = function(message) {
   if(message.data == "ping") {
@@ -30,7 +31,7 @@ ws.onmessage = function(message) {
     $rev.html(data.html);
   }
 
-  setupLinkOpening();
+  setUpLinkOpening();
 };
 
 reloadWhenSocketConnectionIsLost = function() {
@@ -40,6 +41,6 @@ reloadWhenSocketConnectionIsLost = function() {
   if(secondsSinceLastUpdate > 10) {
     location.reload();
   }
-}
+};
 
 window.setInterval(reloadWhenSocketConnectionIsLost, 5000);
