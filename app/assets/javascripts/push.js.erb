@@ -18,16 +18,16 @@ ws.onmessage = function(message) {
     console.log("Got ping from server.")
   } else {
     var data = JSON.parse(message.data);
-    selector = $("#revision_" + data.revision_id);
 
-    // Add place for new revision
-    if($(selector).length == 0) {
-      $(".revisions").prepend('<div id="revision_' + data.revision_id + '">' + data.html + '</div>');
+    var $rev = $("#revision_" + data.revision_id);
+
+    // Didn't exist, so add it.
+    if (!$rev.length) {
+      $rev = $("<div id='revision_" + data.revision_id + "'>");
+      $(".revisions").prepend($rev);
     }
-    else {
-      // Update old ones
-      $("#revision_" + data.revision_id).html(data.html);
-    }
+
+    $rev.html(data.html);
   }
 
   setupLinkOpening();
