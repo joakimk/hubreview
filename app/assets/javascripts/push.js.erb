@@ -14,10 +14,10 @@ $(function() {
 // Handle parameter-based modifications client side because we need to be able to push out
 // one version of new pages during github receive for everyone.
 
-// Unless ?open_in_same_page=true is set, default to opening in new page.
+// If ?open_in_same_page=true is set, remove target="_blank".
 var setUpLinkOpening = function() {
-  if (location.search.indexOf("open_in_same_page") === -1) {
-    $(".rev a").attr("target", "_blank");
+  if (location.search.indexOf("open_in_same_page") !== -1) {
+    $(".rev a").attr("target", "");
   }
 };
 
