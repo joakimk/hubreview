@@ -5,6 +5,20 @@ body {
   font-size: 14px;
 }
 
+a {
+  color: #444;
+}
+
+.revision-wrapper {
+  &.by-me {
+    opacity: 0.3;
+  }
+
+  &.last-clicked {
+    font-weight: bold;
+  }
+}
+
 .revision {
   padding: 10px;
   max-width: 1000px;
@@ -34,12 +48,4 @@ body {
       color: #444;
     }
   }
-}
-
-.revision-wrapper.by-me {
-  opacity: 0.3;
-}
-
-.revision-wrapper.last-clicked {
-  font-weight: bold;
 }
