@@ -3,6 +3,14 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 var lastPingTime = new Date();
 
+$(function() {
+  $(".revisions").on("click", ".rev a", function() {
+    var $revision = $(this).parents(".revision");
+    $(".revision").removeClass("last-clicked");
+    $revision.addClass("last-clicked");
+  });
+});
+
 // Handle parameter-based modifications client side because we need to be able to push out
 // one version of new pages during github receive for everyone.
 
