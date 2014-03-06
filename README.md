@@ -57,6 +57,7 @@ May error out on some loads due to web sockets.
 * Mark a commit as in review
 * Various filters or search
 * Showing CI status
+* For some unknown reason setupLinkOpening() can't be triggered during page load on heroku. Set it to run on all websocket updates for now.
 
 ## Credits and license
 
