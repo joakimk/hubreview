@@ -10,7 +10,10 @@ $ ->
   uri      = scheme + window.document.location.host + "/"
   ws       = new WebSocket(uri)
 
+  console.log("Setting up")
+
   ws.onmessage = (message) ->
+    console.log("Getting message: #{message}")
     if message.data == "ping"
       lastPingTime = new Date()
       console.log("Got ping from server.")
