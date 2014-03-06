@@ -55,17 +55,17 @@ a {
     margin-top: 8px;
   }
 
-  .tag {
+  .property {
     margin-left: 5px;
     display: inline;
 
-    .name {
+    .property-name {
       display: inline;
       margin-right: 3px;
       color: $light-gray;
     }
 
-    .value {
+    .property-value {
       display: inline;
       font-weight: 600;
       color: $dark-gray;

@@ -7,9 +7,9 @@
       = revision.message
   .rev
     = link_to(revision.short_name, revision.url, target: "_blank")
-    .tag
-      .name in
-      .value= revision.branch
-    .tag
-      .name by
-      .value.revision-author= revision.author
+    .property
+      .property-name in
+      .property-value= revision.branch
+    .property
+      .property-name by
+      .property-value.revision-author= revision.author
