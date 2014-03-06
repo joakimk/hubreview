@@ -5,7 +5,9 @@ def on_heroku?
 end
 
 # Don't break multiple ruby versions in travis just because heroku requires a specific one
-ruby "1.9.3" if on_heroku?
+if on_heroku?
+  ruby "1.9.3"
+end
 
 gem 'rails', '4.0.3'
 
