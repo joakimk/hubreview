@@ -16,8 +16,9 @@ The idea is to use github for codereview and keep track of which commits has bee
 
 ## Parameters
 
-`?open_in_same_page=true` removes the `target="_blank"` from links (useful e.g. if with panels in [Fluid.app](http://fluidapp.com/))
-`?me=Foobar` de-emphasizes commits where the author contains "Foobar" (case-sensitive)
+* `?open_in_same_page=true` removes the `target="_blank"` from links (useful e.g. if with panels in [Fluid.app](http://fluidapp.com/))
+
+* `?me=Foobar` de-emphasizes commits where the author contains "Foobar" (case-sensitive)
 
 ## Heroku
 
