@@ -36,7 +36,11 @@ $ ->
 # If ?open_in_same_page=true is set, remove target="_blank".
 setUpLinkOpening = ->
   if location.search.indexOf("open_in_same_page") != -1
+<<<<<<< HEAD
     $(".rev a").attr("target", "");
+=======
+    $("a[target]").attr("target", "")
+>>>>>>> Making the js proper coffeescript so it can be maintained :)
 
 # De-emphasize commits by author provided as ?me=name
 filterByAuthor = ->
