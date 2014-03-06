@@ -1,7 +1,7 @@
 .revision class=(revision.reviewed? ? 'was-reviewed' : '')
-  .button
+  .button-wrapper
     = form_for(revision, remote: true) do |f|
-      = f.submit revision.reviewed ? "Mark as new" : "Mark as reviewed"
+      = f.submit (revision.reviewed ? "Mark as new" : "Mark as reviewed"), class: "button"
   .message
     = link_to(revision.url, target: "_blank") do
       = revision.message

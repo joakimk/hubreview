@@ -1,3 +1,4 @@
+$white: #fff;
 $green: #dfd;
 $light-gray: #888;
 $dark-gray: #444;
@@ -28,12 +29,25 @@ a {
   max-width: 1000px;
   margin-bottom: 1px;
 
+  & {  // Not reviewed.
+    .button { background: $green; }
+  }
+
   &.was-reviewed {
     background: $green;
+    .button { background-color: $white; }
+  }
+
+  .button-wrapper {
+    float: right;
   }
 
   .button {
-    float: right;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 600;
   }
 
   .rev {
