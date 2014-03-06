@@ -10,4 +10,6 @@
     .tag
       .name by
       .value.revision-author= revision.author
-  .message= revision.message
+  .message
+    = link_to(revision.url, target: "_blank") do
+      = revision.message
