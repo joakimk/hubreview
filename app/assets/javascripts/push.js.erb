@@ -41,6 +41,7 @@ ws.onmessage = function(message) {
     var $rev = $("#revision_" + data.revision_id);
 
     // Didn't exist, so add it.
+    // NOTE: Keep this in sync with revisions/index.html.slim.
     if (!$rev.length) {
       $rev = $("<div id='revision_" + data.revision_id + "'>");
       $(".revisions").prepend($rev);
