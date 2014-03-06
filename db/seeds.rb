@@ -27,7 +27,7 @@ if Rails.env.development?
     branch: "master",
     author: "Joakim Kolsjö",
     url: "http://example.com/foo",
-    message: "Do the thing.",
+    message: "Do the thing.\n\nSome details.",
     reviewed: true,
     payload: {},
   )

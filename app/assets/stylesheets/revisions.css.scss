@@ -3,11 +3,14 @@ $green: #dfd;
 $light-gray: #888;
 $dark-gray: #444;
 
+$large-font-size: 14px;
+$small-font-size: 12px;
+
 body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: $large-font-size;
 }
 
 a {
@@ -50,8 +53,14 @@ a {
     font-weight: 600;
   }
 
+  .message-details {
+    font-size: $small-font-size;
+    margin: 4px 0;
+    color: $light-gray;
+  }
+
   .rev {
-    font-size: 12px;
+    font-size: $small-font-size;
     margin-top: 8px;
   }
 
