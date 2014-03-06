@@ -1,6 +1,6 @@
 lastPingTime = new Date()
 
-$ ->
+setup = ->
   $(".revisions").on "click", ".rev a", ->
     $revision = $(this).parents(".revision-wrapper")
     $(".revision-wrapper").removeClass("last-clicked")
@@ -10,10 +10,7 @@ $ ->
   uri      = scheme + window.document.location.host + "/"
   ws       = new WebSocket(uri)
 
-  console.log("Setting up")
-
   ws.onmessage = (message) ->
-    console.log("Getting message: #{message}")
     if message.data == "ping"
       lastPingTime = new Date()
       console.log("Got ping from server.")
@@ -58,3 +55,6 @@ reloadWhenSocketConnectionIsLost = ->
     location.reload()
 
 window.setInterval(reloadWhenSocketConnectionIsLost, 5000)
+
+# document.ready does not trigger for some reason on heroku, probably websocket related
+window.setTimeout(setup, 1000)
