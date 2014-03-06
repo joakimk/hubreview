@@ -17,10 +17,6 @@ class Revision < ActiveRecord::Base
     self.reviewed = !reviewed?
   end
 
-  def in_review?
-    in_review_at?
-  end
-
   private
 
   def message_parts
