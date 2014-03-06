@@ -23,10 +23,10 @@ var setUpLinkOpening = function() {
 
 // De-emphasize commits by author provided as ?me=name
 var filterByAuthor = function() {
-  var needle = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1]);
+  var authorName = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1]);
 
-  if (needle) {
-    var $revisions = $(".revision-author:contains("+needle+")").parents(".revision-wrapper");
+  if (authorName) {
+    var $revisions = $(".revision-author:contains("+authorName+")").parents(".revision-wrapper");
     $revisions.addClass("by-me");
   };
 };
