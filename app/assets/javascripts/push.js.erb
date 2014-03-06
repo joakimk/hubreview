@@ -5,8 +5,8 @@ var lastPingTime = new Date();
 
 $(function() {
   $(".revisions").on("click", ".rev a", function() {
-    var $revision = $(this).parents(".revision");
-    $(".revision").removeClass("last-clicked");
+    var $revision = $(this).parents(".revision-wrapper");
+    $(".revision-wrapper").removeClass("last-clicked");
     $revision.addClass("last-clicked");
   });
 });
@@ -26,7 +26,7 @@ var filterByAuthor = function() {
   var needle = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1]);
 
   if (needle) {
-    var $revisions = $(".revision-author:contains("+needle+")").parents(".revision");
+    var $revisions = $(".revision-author:contains("+needle+")").parents(".revision-wrapper");
     $revisions.addClass("by-me");
   };
 };
@@ -43,7 +43,7 @@ ws.onmessage = function(message) {
     // Didn't exist, so add it.
     // NOTE: Keep this in sync with revisions/index.html.slim.
     if (!$rev.length) {
-      $rev = $("<div id='revision_" + data.revision_id + "'>");
+      $rev = $("<div class='revision-wrapper' id='revision_" + data.revision_id + "'>");
       $(".revisions").prepend($rev);
     }
 
