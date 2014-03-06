@@ -6,11 +6,21 @@ var lastPingTime = new Date();
 // Handle parameter-based modifications client side because we need to be able to push out
 // one version of new pages during github receive for everyone.
 
+// Unless ?open_in_same_page=true is set, default to opening in new page.
 var setUpLinkOpening = function() {
-  // Unless ?open_in_same_page=true is set, default to opening in new page.
   if (location.search.indexOf("open_in_same_page") === -1) {
     $(".rev a").attr("target", "_blank");
   }
+};
+
+// De-emphasize commits by author provided as ?me=name
+var filterByAuthor = function() {
+  var needle = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1]);
+
+  if (needle) {
+    var $revisions = $(".revision-author:contains("+needle+")").parents(".revision");
+    $revisions.addClass("by-me");
+  };
 };
 
 ws.onmessage = function(message) {
@@ -32,6 +42,7 @@ ws.onmessage = function(message) {
   }
 
   setUpLinkOpening();
+  filterByAuthor();
 };
 
 reloadWhenSocketConnectionIsLost = function() {
