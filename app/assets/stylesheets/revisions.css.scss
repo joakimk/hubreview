@@ -23,8 +23,8 @@ a {
     opacity: 0.3;
   }
 
-  &.last-clicked {
-    font-weight: bold;
+  &.last-clicked .revision {
+    border-left: 15px solid $blue;
   }
 }
 
@@ -32,6 +32,7 @@ a {
   padding: 10px;
   max-width: 1000px;
   margin-bottom: 1px;
+  box-sizing: border-box;
 
   & {  // Not reviewed.
     .button { background: $green; }
