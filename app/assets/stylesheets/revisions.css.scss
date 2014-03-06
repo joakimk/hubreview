@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
 .revision {
@@ -11,6 +13,11 @@ body {
     float: right;
   }
 
+  .rev {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
   .tag {
     margin-left: 5px;
     display: inline;
@@ -18,10 +25,13 @@ body {
     .name {
       display: inline;
       margin-right: 3px;
+      color: #888;
     }
 
     .value {
       display: inline;
+      font-weight: 600;
+      color: #444;
     }
   }
 }
