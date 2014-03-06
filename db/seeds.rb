@@ -3,7 +3,7 @@
 # Example data for dev.
 if Rails.env.development?
   Revision.create!(
-    name: "abc123",
+    name: "abc123abc123abc123",
     branch: "master",
     author: "Henrik Nyh and Victor Arias",
     url: "http://example.com/foo",
@@ -13,7 +13,7 @@ if Rails.env.development?
   )
 
   Revision.create!(
-    name: "123abc",
+    name: "123abc123abc123abc",
     branch: "master",
     author: "Joakim Kolsjö",
     url: "http://example.com/foo",
