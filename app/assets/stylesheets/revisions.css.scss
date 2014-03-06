@@ -22,7 +22,11 @@ a {
 .revision {
   padding: 10px;
   max-width: 1000px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
+
+  &.was-reviewed {
+    background: #afa;
+  }
 
   .button {
     float: right;

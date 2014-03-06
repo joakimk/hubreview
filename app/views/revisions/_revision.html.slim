@@ -1,4 +1,4 @@
-.revision{ style="#{revision.reviewed ? 'background-color: #AFA;' : ''}" }
+.revision class=(revision.reviewed? ? 'was-reviewed' : '')
   .button
     = form_for(revision, remote: true) do |f|
       = f.submit revision.reviewed ? "Mark as new" : "Mark as reviewed"
