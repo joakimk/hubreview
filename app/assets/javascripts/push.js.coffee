@@ -1,34 +1,33 @@
-lastPingTime = new Date()
-
 $ ->
   $(".revisions").on "click", ".rev a", ->
     $revision = $(this).parents(".revision-wrapper")
     $(".revision-wrapper").removeClass("last-clicked")
     $revision.addClass("last-clicked")
 
-    scheme   = $("body").data("push-scheme")
-    uri      = scheme + window.document.location.host + "/"
-    ws       = new WebSocket(uri)
+  scheme   = $("body").data("push-scheme")
+  uri      = scheme + window.document.location.host + "/"
+  ws       = new WebSocket(uri)
+  lastPingTime = new Date()
 
-    ws.onmessage = (message) ->
-      if message.data == "ping"
-        lastPingTime = new Date()
-        console.log("Got ping from server.")
-      else
-        data = JSON.parse(message.data)
+  ws.onmessage = (message) ->
+    if message.data == "ping"
+      lastPingTime = new Date()
+      console.log("Got ping from server.")
+    else
+      data = JSON.parse(message.data)
 
-        $rev = $("#revision_" + data.revision_id)
+      $rev = $("#revision_" + data.revision_id)
 
-        # Didn't exist, so add it.
-        # NOTE: Keep this in sync with revisions/index.html.slim.
-        if !$rev.length
-          $rev = $("<div class='revision-wrapper' id='revision_" + data.revision_id + "'>")
-          $(".revisions").prepend($rev)
+      # Didn't exist, so add it.
+      # NOTE: Keep this in sync with revisions/index.html.slim.
+      if !$rev.length
+        $rev = $("<div class='revision-wrapper' id='revision_" + data.revision_id + "'>")
+        $(".revisions").prepend($rev)
 
-        $rev.html(data.html)
+      $rev.html(data.html)
 
-      setUpLinkOpening()
-      filterByAuthor()
+    setUpLinkOpening()
+    filterByAuthor()
 
 # Handle parameter-based modifications client side because we need to be able to push out
 # one version of new pages during github receive for everyone.
