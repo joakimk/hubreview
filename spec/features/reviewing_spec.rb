@@ -1,8 +1,29 @@
 require "spec_helper"
 
 describe "Reviewing revisons" do
-  it "can mark revisions as reviewed"
-  it "can mark revisions as new"
+  it "can mark revisions as reviewed", :js do
+    revision = create_revision name: "abc123abc123abc123"
+    visit "/"
+
+    expect(page).not_to have_reviewed_revisions
+
+    click_button "Mark as reviewed"
+
+    update_page
+    expect(page).to have_reviewed_revisions
+  end
+
+  it "can mark revisions as new", :js do
+    revision = create_revision name: "abc123abc123abc123", reviewed: true
+    visit "/"
+
+    expect(page).to have_reviewed_revisions
+
+    click_button "Mark as new"
+
+    update_page
+    expect(page).not_to have_reviewed_revisions
+  end
 
   it "marks revisions as in review for a while when you click on them", :js do
     revision = create_revision name: "abc123abc123abc123"
@@ -35,6 +56,10 @@ describe "Reviewing revisons" do
 
   def have_revision_in_review
     have_selector(".revision.in-review")
+  end
+
+  def have_reviewed_revisions
+    have_selector(".revision.was-reviewed")
   end
 
   def create_revision(opts = {})
