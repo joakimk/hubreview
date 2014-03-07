@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   force_ssl if: :production?
 
-  before_filter :allow_iframe
   before_filter :require_auth_key
 
   private
@@ -16,10 +15,6 @@ class ApplicationController < ActionController::Base
     else
       session[:authorized] = true
     end
-  end
-
-  def allow_iframe
-    response.headers.except! 'X-Frame-Options'
   end
 
   def production?
