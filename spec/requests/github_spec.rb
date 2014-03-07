@@ -8,6 +8,7 @@ describe "Capturing revision data from github payloads" do
     expect(revision.name).to eq("232e29976db07bc05124007ff11165b10c0ee65f")
     expect(revision.author).to match(/Joakim/)
     expect(revision.author_email).to eq("foo@example.com")
+    expect(revision.project_name).to eq("minimapper")
     expect(revision.url).to match(/http/)
     expect(revision.message).to match(/Update/)
     expect(revision.branch).to eq("master")

@@ -7,6 +7,7 @@ class GithubsController < ApplicationController
         name:         commit[:id],
         author:       commit[:author][:name],
         author_email: commit[:author][:email],
+        project_name: payload[:repository][:name],
         url:          commit[:url],
         message:      commit[:message],
         branch:       payload["ref"].split("/").last,
