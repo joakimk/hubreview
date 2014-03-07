@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Revision, "#message_summary" do
   context "with a one-paragraph message" do
@@ -30,7 +30,7 @@ describe Revision, "#message_details" do
   context "with a multi-paragraph message" do
     let(:revision) { Revision.new(message: "Hello\n\nWello\n\nGrello\nYello") }
 
-    it "is the first paragraph" do
+    it "is every paragraph but the first" do
       expect(revision.message_details).to eq "Wello\n\nGrello\nYello"
     end
   end
