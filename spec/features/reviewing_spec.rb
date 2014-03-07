@@ -70,6 +70,7 @@ describe "Reviewing revisons" do
       branch: "master",
       author: "Joe",
       author_email: "joe@example.org",
+      project_name: "example",
       url: "http://example.org",
       message: "Message",
       payload: {}
