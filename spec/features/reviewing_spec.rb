@@ -65,6 +65,14 @@ describe "Reviewing revisons" do
   end
 
   def create_revision(opts = {})
-    Revision.create!({ name: "abc123abc123abc123", branch: "master", author: "Joe", url: "http://example.org", message: "Message", payload: {} }.merge(opts))
+    Revision.create!({
+      name: "abc123abc123abc123",
+      branch: "master",
+      author: "Joe",
+      author_email: "joe@example.org",
+      url: "http://example.org",
+      message: "Message",
+      payload: {}
+    }.merge(opts))
   end
 end
