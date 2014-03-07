@@ -78,7 +78,7 @@ If that's not enough, you can download production data.
 
 ## Todo
 
-* See if some workflow could be made where you didn't have to check email for comments. Maybe as simple as listing your reviewed commits. Better if it can list those with new comments. Mark as checked at a time. Have new stuff make them reappear.
+* See if some workflow could be made where you don't have to check email for comments. Maybe as simple as listing your reviewed commits. Better if it can list those with new comments. Mark as checked at a time. Have new stuff make them reappear.
 
 ## Credits and license
 
