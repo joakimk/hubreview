@@ -1,4 +1,5 @@
 .revision class=(revision.reviewed? ? 'was-reviewed' : '') last_in_review=revision.in_review_at.to_i
+  img.gravatar src=Gravatar.url_from_email(revision.author_email)
   .button-wrapper
     = form_for(revision, remote: true) do |f|
       = f.submit (revision.reviewed? ? "Mark as new" : "Mark as reviewed"), class: "button"
