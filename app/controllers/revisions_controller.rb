@@ -1,5 +1,7 @@
 class RevisionsController < ApplicationController
   def index
+    revisions = Revision.limit(100).order('id DESC')
+    render :index, locals: { revisions: revisions }
   end
 
   def update
