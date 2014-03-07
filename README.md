@@ -1,12 +1,10 @@
 ## About
 
-Wip experimental commit-by-commit codereview app.
+Wip commit-by-commit codereview app.
 
 To be able to do review on everything when you [integrate commit-by-commit instead of doing feature branches and pull requests](http://thepugautomatic.com/2014/02/code-review/).
 
 The idea is to use github for codereview and keep track of which commits has been reviewed in this app.
-
-**This is a prototype**, the code will be bad and tests missing. Just doing the fastest possible thing.
 
 ## How it looks
 
@@ -59,15 +57,11 @@ If that's not enough, you can download production data.
 
 ## Todo
 
-* Evaluate if this is a good idea and something to keep
-  * In that case reimplement the prototyped parts and refactor
 * See if a userscript can be used to report reviewed commits.
 * Fetch comment info somehow. Display which of your commits have comments. Be able to mark as read up to some time.
   * Not needing to check email for review comments.
 * Evaluate "idea for hubreview: have the favicon change to show the number of unreviewed things"
 * Github auth to see who is reviewing.
-* Gravatar images
-* Mark a commit as in review
 * Various filters or search
 * Showing CI status
 * For some unknown reason setupLinkOpening() can't be triggered during page load on heroku. Set it to run on all websocket updates for now.
