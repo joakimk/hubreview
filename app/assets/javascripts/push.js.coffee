@@ -48,7 +48,7 @@ updateInReview = ->
   for revision in $(".revision")
     unix = Math.round(new Date() / 1000)
     timeSinceLastReview = unix - $(revision).attr("last_in_review")
-    howLongToConsiderRevisionCurrentlyInReview = 60 # seconds
+    howLongToConsiderRevisionCurrentlyInReview = 300 # seconds
 
     if !$(revision).hasClass("was-reviewed") && timeSinceLastReview < howLongToConsiderRevisionCurrentlyInReview
       $(revision).addClass("in-review")
