@@ -18,6 +18,27 @@ The idea is to use github for codereview and keep track of which commits has bee
 
 * `?me=Foobar` de-emphasizes commits where the author contains "Foobar" (case-sensitive)
 
+## Use with Fluid.app (on OS X)
+
+With [Fluid.app](http://fluidapp.com/), you can see Hubreview side-by-side with GitHub in two panes.
+
+This is not possible with regular iframes, as GitHub doesn't allow embedding.
+
+* Install [Fluid.app](http://fluidapp.com/).
+* Launch Fluid.app, create a new app:
+  * The URL should be `http://github.com`.
+  * Use any name and icon you like. It defaults to the GitHub icon.
+  * Let it launch the app.
+* Open your app's preferences and configure it like this:
+  * Whitelist:
+    * Allow browsing to any URL
+  * The first of the two "Browsa" panels:
+    * Enter the Hubreview URL as home page, include the `?open_in_same_page=true` parameter.
+    * Navigation bar: is always hidden
+    * Clicked links open in: current tab in current window
+* In the "Panels" menu, select the first Browsa panel to show it
+
+
 ## Heroku
 
     git remote add heroku git@heroku.com:APP_NAME.git
