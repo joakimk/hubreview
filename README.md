@@ -34,8 +34,8 @@ Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth
 
 ## Running tests
 
-    rake db:migrate
-    rake db:schema:load
+    # OSX: brew install phantomjs
+    rake db:create db:migrate db:schema:load
     rake
 
 ## Running locally
