@@ -9,7 +9,7 @@
     = link_to(revision.short_name, revision.url, target: "_blank")
     .property
       .property-name in
-      .property-value= revision.branch
+      .property-value= "#{revision.project_name} / #{revision.branch}"
     .property
       .property-name by
       .property-value.revision-author= revision.author
