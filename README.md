@@ -1,10 +1,8 @@
 ## About
 
-Commit-by-commit codereview app.
+Commit-by-commit codereview app for github repos. Keeps track of what has been reviewed but links to github commits for the actual review.
 
-To be able to do review on everything when you [integrate commit-by-commit instead of doing feature branches and pull requests](http://thepugautomatic.com/2014/02/code-review/).
-
-The idea is to use github for codereview and keep track of which commits has been reviewed in this app.
+This can be used to do code review when you [integrate commit-by-commit instead of doing feature branches and pull requests](http://thepugautomatic.com/2014/02/code-review/).
 
 ## How it looks
 
