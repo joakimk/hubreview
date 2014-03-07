@@ -10,7 +10,7 @@ The idea is to use github for codereview and keep track of which commits has bee
 
 (when used in combination with Fluid.app to get a github pane on the right)
 
-![how it looks](http://cl.ly/image/080p2y3T3b22/Screen%20Shot%202014-03-06%20at%207.56.07%20PM.png)
+![how it looks](http://cl.ly/image/1x0W0V2m2c3A/Screen%20Shot%202014-03-07%20at%208.06.08%20PM.png)
 
 ## Parameters
 
