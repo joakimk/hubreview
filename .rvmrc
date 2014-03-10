@@ -1,3 +1,4 @@
 # NOEXEC_DISABLE to not run bundle exec by default
 export NOEXEC_DISABLE=1
+# FIXME: 1.9 because Jocke's old RVM doesn't support 2.x.
 rvm ruby-1.9.3-p484@hubreview --create
