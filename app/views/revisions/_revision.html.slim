@@ -6,7 +6,7 @@
   .message-summary= link_to(revision.message_summary, revision.url, target: "_blank")
   .message-details= revision.message_details
   .rev
-    = link_to(revision.short_name, revision.url, target: "_blank")
+    span.revision-hash= link_to(revision.short_name, revision.url, target: "_blank")
     .property
       .property-name in
       .property-value= "#{revision.project_name} / #{revision.branch}"

@@ -8,10 +8,24 @@ $dark-gray: #444;
 $large-font-size: 14px;
 $small-font-size: 12px;
 
-%small-avatar .gravatar {
-  margin-top: 0;
-  width: 16px;
-  height: 16px;
+%small-revision {
+  .gravatar {
+    margin-top: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .rev {
+    margin-left: 0.5em;
+  }
+
+  .message-summary, .rev {
+    display: inline;
+  }
+
+  .message-details, .revision-hash {
+    display: none;
+  }
 }
 
 body {
@@ -27,13 +41,9 @@ a {
 
 .revision-wrapper {
   &.by-me {
-    @extend %small-avatar;
-
+    @extend %small-revision;
     opacity: 0.5;
-
-    .message-details, .rev, .button-wrapper {
-      display: none;
-    }
+    .button-wrapper { display: none; }
   }
 
   &.last-clicked .revision {
@@ -52,25 +62,14 @@ a {
   }
 
   &.was-reviewed {
-    @extend %small-avatar;
+    @extend %small-revision;
 
     background: $green;
-
     .button-wrapper { margin-top: -3px; }
 
     .button {
       font-size: 9px;
       background-color: $white;
-    }
-
-    .gravatar {
-      margin-top: 0;
-      width: 16px;
-      height: 16px;
-    }
-
-    .message-details, .rev {
-      display: none;
     }
   }
 
