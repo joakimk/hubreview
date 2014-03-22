@@ -22,6 +22,15 @@ a {
 .revision-wrapper {
   &.by-me {
     opacity: 0.3;
+
+    .gravatar {
+      width: 16px;
+      height: 16px;
+    }
+
+    .message-details, .rev, .button-details {
+      display: none;
+    }
   }
 
   &.last-clicked .revision {
