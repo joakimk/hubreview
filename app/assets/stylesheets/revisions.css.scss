@@ -15,15 +15,7 @@ $small-font-size: 12px;
     height: 16px;
   }
 
-  .rev {
-    margin-left: 0.5em;
-  }
-
-  .message-summary, .rev {
-    display: inline;
-  }
-
-  .message-details, .revision-hash {
+  .message-details, .rev {
     display: none;
   }
 }
