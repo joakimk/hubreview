@@ -1,6 +1,8 @@
 class Revision < ActiveRecord::Base
   serialize :payload
 
+  scope :newest_first, -> { order("id DESC") }
+
   def short_name
     name.first(10)
   end
