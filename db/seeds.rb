@@ -4,6 +4,7 @@
 if Rails.env.development?
   Revision.create!(
     name: "abc123abc123abc123",
+    project_name: "foonet",
     branch: "master",
     author: "Henrik Nyh and Victor Arias",
     author_email: "all+henrik+victor@barsoom.se",
@@ -15,6 +16,7 @@ if Rails.env.development?
 
   Revision.create!(
     name: "xyzabcxyzabcxyc",
+    project_name: "foonet",
     branch: "master",
     author: "Kim Persson",
     author_email: "kim@example.com",
@@ -26,6 +28,7 @@ if Rails.env.development?
 
   Revision.create!(
     name: "123abc123abc123abc",
+    project_name: "barnet",
     branch: "master",
     author: "Joakim Kolsjö",
     author_email: "jocke@example.com",
