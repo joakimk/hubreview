@@ -16,7 +16,7 @@ describe "Reviewing revisons" do
   end
 
   it "can mark revisions as new", :js do
-    revision = create_revision name: "abc123abc123abc123", reviewed: true
+    revision = create_revision reviewed: true
     visit "/"
 
     expect(page).to have_reviewed_revisions
@@ -28,13 +28,13 @@ describe "Reviewing revisons" do
   end
 
   it "marks revisions as in review for a while when you click on them", :js do
-    revision = create_revision name: "abc123abc123abc123"
+    revision = create_revision message: "Test the thing"
 
     visit "/"
 
     expect(page).not_to have_revision_in_review
 
-    click_link "abc123"
+    click_link "Test the thing"
 
     update_page
     expect(page).to have_revision_in_review
@@ -42,11 +42,11 @@ describe "Reviewing revisons" do
   end
 
   it "does not mark reviewed revisions as in-review when you click on them", :js do
-    revision = create_revision name: "abc123abc123abc123", reviewed: true
+    revision = create_revision message: "Test the thing", reviewed: true
 
     visit "/"
 
-    click_link "abc123"
+    click_link "Test the thing"
 
     update_page
     expect(page).not_to have_revision_in_review
