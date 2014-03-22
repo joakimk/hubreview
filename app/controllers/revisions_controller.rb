@@ -2,7 +2,7 @@ class RevisionsController < ApplicationController
   NUMBER_OF_REVISIONS = 250
 
   def index
-    revisions = Revision.limit(NUMBER_OF_REVISIONS).order('id DESC')
+    revisions = Revision.limit(NUMBER_OF_REVISIONS).order("id DESC")
     render :index, locals: { revisions: revisions }
   end
 
