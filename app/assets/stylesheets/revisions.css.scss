@@ -8,6 +8,12 @@ $dark-gray: #444;
 $large-font-size: 14px;
 $small-font-size: 12px;
 
+%small-avatar .gravatar {
+  margin-top: 0;
+  width: 16px;
+  height: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,13 +27,9 @@ a {
 
 .revision-wrapper {
   &.by-me {
-    opacity: 0.5;
+    @extend %small-avatar;
 
-    .gravatar {
-      margin-top: 0;
-      width: 16px;
-      height: 16px;
-    }
+    opacity: 0.5;
 
     .message-details, .rev, .button-wrapper {
       display: none;
@@ -50,8 +52,26 @@ a {
   }
 
   &.was-reviewed {
+    @extend %small-avatar;
+
     background: $green;
-    .button { background-color: $white; }
+
+    .button-wrapper { margin-top: -3px; }
+
+    .button {
+      font-size: 9px;
+      background-color: $white;
+    }
+
+    .gravatar {
+      margin-top: 0;
+      width: 16px;
+      height: 16px;
+    }
+
+    .message-details, .rev {
+      display: none;
+    }
   }
 
   &.in-review {
