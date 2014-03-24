@@ -25,6 +25,10 @@ gem 'faye-websocket'
 gem 'redis'
 gem 'thin'
 
+group :development do
+  gem 'foreman'
+end
+
 group :development, :test do
   gem 'rspec-rails'
 end
