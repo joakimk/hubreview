@@ -49,11 +49,11 @@ This is not possible with regular iframes, as GitHub doesn't allow embedding.
 
 ## Setup on github
 
-### Automatic:
+### Automatic
 
   If you're a barsoomian you could use [this](https://github.com/barsoom/servers/wiki/Hubreview-hook)
 
-### Manual:
+### Manual
 
   Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth_key=your-key, commit to the repo and look at https://your-app.herokuapp.com?auth_key=your-key.
 
