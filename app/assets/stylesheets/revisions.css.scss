@@ -15,8 +15,12 @@ $small-font-size: 12px;
     height: 16px;
   }
 
-  .message-details, .rev {
+  .message-details, .revision-hash, .revision-by-author {
     display: none;
+  }
+
+  .message-summary, .rev, .revision-in-project-and-branch {
+    display: inline;
   }
 }
 

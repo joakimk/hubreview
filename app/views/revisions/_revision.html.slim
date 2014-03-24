@@ -7,9 +7,9 @@
   .message-details= revision.message_details
   .rev
     span.revision-hash= link_to(revision.short_name, revision.url, target: "_blank")
-    .property
+    .property.revision-in-project-and-branch
       .property-name in
       .property-value= "#{revision.project_name} / #{revision.branch}"
-    .property
+    .property.revision-by-author
       .property-name by
       .property-value.revision-author= revision.author
