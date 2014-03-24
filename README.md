@@ -49,13 +49,11 @@ This is not possible with regular iframes, as GitHub doesn't allow embedding.
 
 ## Setup on github
 
-- Automatic:
+### Automatic:
 
-  Use TOKEN=yourtoken rake github:apply in the servers repo. Note: You need to have a [personal token](https://github.com/settings/applications#personal-access-tokens). 
-  
-  When creating it check the following checkboxes: repo and admin:repo_hook. Also give it some useful name like hubreview.
+  If you're a barsoomian you could use [this](https://github.com/barsoom/servers/wiki/Hubreview-hook)
 
-- Manuall:
+### Manual:
 
   Add a webhook, set the payload url to https://your-app.herokuapp.com/github?auth_key=your-key, commit to the repo and look at https://your-app.herokuapp.com?auth_key=your-key.
 
