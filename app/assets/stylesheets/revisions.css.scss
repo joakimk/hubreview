@@ -38,7 +38,6 @@ a {
 .revision-wrapper {
   &.by-me {
     @extend %small-revision;
-    opacity: 0.5;
     .button-wrapper { display: none; }
   }
 
