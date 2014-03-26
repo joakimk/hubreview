@@ -1,9 +1,14 @@
 window.Hubreview or= {}
 Hubreview.opts or= {}
 
+# Provided as ?open_in_same_page=true
 Hubreview.opts.openInSamePage = location.search.indexOf("open_in_same_page") != -1
+
+# Provided as ?me=name
 Hubreview.opts.me = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1])
+
 Hubreview.lastPingTime = new Date()
+
 
 init = ->
   window.setInterval(reloadWhenSocketConnectionIsLost, 5000)
@@ -15,10 +20,9 @@ init = ->
 documentIsReady = ->
   updateRevisionStates()
 
-  scheme   = $("body").data("push-scheme")
-  uri      = scheme + window.document.location.host + "/"
-  ws       = new WebSocket(uri)
-
+  scheme = $("body").data("push-scheme")
+  uri = scheme + window.document.location.host + "/"
+  ws = new WebSocket(uri)
   ws.onmessage = actOnMessage
 
 
@@ -46,7 +50,6 @@ updateRevisionStates = ->
   filterByAuthor()
   updateInReview()
 
-
 # Handle parameter-based modifications client side because we need to be able to push out
 # one version of new pages during github receive for everyone.
 
@@ -55,7 +58,7 @@ setUpLinkOpening = ->
   if Hubreview.opts.openInSamePage
     $("a[target]").attr("target", "")
 
-# De-emphasize commits by author provided as ?me=name
+# De-emphasize commits by author
 filterByAuthor = ->
   authorName = Hubreview.opts.me
 
@@ -75,9 +78,10 @@ updateInReview = ->
     else
       $(revision).removeClass("in-review")
 
+
 reloadWhenSocketConnectionIsLost = ->
   currentTime = new Date()
-  secondsSinceLastUpdate = (currentTime - Hubreview.lastPingTime) / 1000.0
+  secondsSinceLastUpdate = (currentTime - Hubreview.lastPingTime) / 1000
 
   if secondsSinceLastUpdate > 10
     location.reload()
