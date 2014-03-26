@@ -13,7 +13,7 @@ init = ->
 
 
 documentIsReady = ->
-  updateInReview()
+  updateRevisionStates()
 
   scheme   = $("body").data("push-scheme")
   uri      = scheme + window.document.location.host + "/"
@@ -38,6 +38,10 @@ actOnMessage = (message) ->
 
     $rev.html(data.html)
 
+  updateRevisionStates()
+
+
+updateRevisionStates = ->
   setUpLinkOpening()
   filterByAuthor()
   updateInReview()
