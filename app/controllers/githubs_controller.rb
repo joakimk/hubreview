@@ -1,7 +1,23 @@
 class GithubsController < ApplicationController
   def create
-    payload = HashWithIndifferentAccess.new(JSON.parse(params[:payload]))
+    if payload.has_key?(:zen)
+      handle_ping
+    else
+      create_commits
+    end
+  end
 
+  private
+
+  def payload
+    @payload ||= HashWithIndifferentAccess.new(JSON.parse(params[:payload]))
+  end
+
+  def handle_ping
+    render text: "Pong!"
+  end
+
+  def create_commits
     payload[:commits].each do |commit|
       revision = Revision.where(name: commit[:id]).first_or_initialize
       revision.attributes = {

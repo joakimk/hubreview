@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe "Capturing revision data from github payloads" do
-  it "works" do
+describe "Receiving GitHub payloads by webhook" do
+  it "can capture revision data" do
     post "/github", payload: File.read("#{Rails.root}/spec/fixtures/github_payload.json")
 
     revision = Revision.last
@@ -20,5 +20,12 @@ describe "Capturing revision data from github payloads" do
     post "/github", payload: File.read("#{Rails.root}/spec/fixtures/github_payload.json")
 
     expect(Revision.count).to eq(1)
+  end
+
+  # http://developer.github.com/webhooks/#ping-event
+  it "handles pings zenfully" do
+    post "/github", payload: { zen: "Yo.", hook_id: 123 }.to_json
+
+    expect(response).to be_success
   end
 end
