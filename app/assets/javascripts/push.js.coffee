@@ -1,3 +1,9 @@
+window.Hubreview or= {}
+Hubreview.opts or= {}
+
+Hubreview.opts.openInSamePage = location.search.indexOf("open_in_same_page") != -1
+Hubreview.opts.me = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1])
+
 lastPingTime = new Date()
 
 setup = ->
@@ -33,12 +39,12 @@ setup = ->
 
 # If ?open_in_same_page=true is set, remove target="_blank".
 setUpLinkOpening = ->
-  if location.search.indexOf("open_in_same_page") != -1
+  if Hubreview.opts.openInSamePage
     $("a[target]").attr("target", "")
 
 # De-emphasize commits by author provided as ?me=name
 filterByAuthor = ->
-  authorName = decodeURIComponent((location.search.match("me=([^&]+)") || ["", ""])[1])
+  authorName = Hubreview.opts.me
 
   if authorName
     $revisions = $(".revision-author:contains("+authorName+")").parents(".revision-wrapper")
