@@ -22,7 +22,6 @@ describe "Receiving GitHub payloads by webhook" do
     expect(Revision.count).to eq(1)
   end
 
-  # http://developer.github.com/webhooks/#ping-event
   it "handles pings zenfully" do
     post "/github", payload: { zen: "Yo.", hook_id: 123 }.to_json
 

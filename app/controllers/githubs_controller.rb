@@ -1,6 +1,7 @@
 class GithubsController < ApplicationController
   def create
     if payload.has_key?(:zen)
+      # http://developer.github.com/webhooks/#ping-event
       handle_ping
     else
       create_commits
