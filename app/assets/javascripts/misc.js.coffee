@@ -1,9 +1,9 @@
-setup = ->
+documentIsReady = ->
   $(".revisions").on "click", ".revision a", markRevisionAsLastClicked
 
-$(setup)
+$(documentIsReady)
 # document.ready does not trigger for some reason on heroku, probably websocket related
-window.setTimeout(setup, 1000)
+window.setTimeout(documentIsReady, 1000)
 
 markRevisionAsLastClicked = ->
   $revision = $(this).parents(".revision-wrapper")

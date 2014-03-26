@@ -13,6 +13,7 @@ Hubreview.lastPingTime = new Date()
 init = ->
   window.setInterval(reloadWhenSocketConnectionIsLost, 5000)
 
+  $(documentIsReady)
   # document.ready does not trigger for some reason on heroku, probably websocket related
   window.setTimeout(documentIsReady, 1000)
 
