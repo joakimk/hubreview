@@ -1,3 +1,7 @@
+## No longer maintained
+
+I'd recommend using [Remit](https://github.com/henrik/remit). It has more features and is actively maintained.
+
 ## About
 
 Commit-by-commit code review app for github repos. Keeps track of what has been reviewed and links to github commits for the actual review.
